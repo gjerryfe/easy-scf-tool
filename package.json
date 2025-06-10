@@ -9,23 +9,30 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "extension.convertToEasyH5",
         "title": "easy-scf: RDS > H5"
+      },
+      {
+        "command": "extension.convertToH5AD",
+        "title": "easy-scf: RDS > h5ad"
       }
     ],
-     "menus": {
-      "explorer/context": [  
+    "menus": {
+      "explorer/context": [
         {
           "command": "extension.convertToEasyH5",
-          "group": "navigation",  
-          "when": "resourceLangId != binary"  
+          "group": "navigation",
+          "when": "resourceLangId != binary"
+        },
+        {
+          "command": "extension.convertToH5AD",
+          "group": "navigation",
+          "when": "resourceLangId != binary"
         }
       ]
     }
@@ -39,14 +46,15 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.100.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
+    "@types/node": "^20.19.0",
+    "@types/vscode": "^1.100.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.25.1",
     "typescript": "^5.8.3",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.5.2"
+    "vscode": "^1.1.37"
   }
 }
